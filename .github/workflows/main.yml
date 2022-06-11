@@ -15,7 +15,7 @@ env:
 on: 
   push:
     branches: 
-      - origin
+      - main
 jobs:
     my_ci_pipeline:
        runs-on: ubuntu-latest
