@@ -1,12 +1,10 @@
-# GitHub Action Workflow to Deploy Node.js App to AWS ElasticBeanstalk
+# GitHub Action Workflow to Deploy Node.js App to DockerHub and AWS ElasticBeanstalk
 #
 # Version      Date        Info
 # 1.0          2022        First Version
 #
 # Made by Dmitry Solomatin
 #---------------------------------------------------------------------
-# This is a basic workflow to help you get started with Actions
-
 name: CI-CD to DockerHub and AWS EBS
 env:
   S3_BUCKET_NAME : "node-app"
