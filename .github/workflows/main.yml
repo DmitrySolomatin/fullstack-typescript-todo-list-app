@@ -56,7 +56,7 @@ jobs:
           context: ./
           docker: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/node-app-${{ github.sha }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/node-app
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
