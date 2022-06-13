@@ -2,7 +2,6 @@
 #
 # Version      Date        Info
 # 1.0          2022        First Version
-#
 # Made by Dmitry Solomatin
 #---------------------------------------------------------------------
 name: CI-CD to DockerHub and AWS EBS
