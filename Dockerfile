@@ -6,7 +6,7 @@ ENV NODE_ENV=production
 
 WORKDIR fullstack-typescript-todo-list-app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["./"]
 
 RUN npm install --production
 
