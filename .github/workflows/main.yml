@@ -7,7 +7,7 @@
 #---------------------------------------------------------------------
 # This is a basic workflow to help you get started with Actions
 
-name: CI-CD to DockerHub
+name: CI-CD to DockerHub and AWS EBS
 
 # Controls when the workflow will run
 on:
@@ -23,15 +23,13 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  CI-CD to DockerHub:
+  Docker_stage:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v1
-    
-     steps:
 
       - name: Check Out Repo 
         uses: actions/checkout@v1
@@ -58,7 +56,6 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
-name: CI-CD-Pipe-to-AWS-EBS
 env:
   S3_BUCKET_NAME : "node-app"
   APPLICATION_NAME       : "NodeApp"
