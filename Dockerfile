@@ -1,5 +1,16 @@
-FROM nginx:alpine
+
+# syntax=docker/dockerfile:1
+
+FROM node:12.18.1
+ENV NODE_ENV=production
+
 WORKDIR fullstack-typescript-todo-list-app
-COPY client /usr/share/nginx/html
-COPY server /usr/share/nginx/html
+
+COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm install --production
+
+COPY . .
+
+CMD [ "node", "server.js" ]
 LABEL maintainer = dmitrysolom
