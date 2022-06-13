@@ -7,9 +7,9 @@
 name: CI-CD to DockerHub and AWS EBS
 env:
   S3_BUCKET_NAME : "node.js-app"
-  APPLICATION_NAME       : "Node.js-App"
-  ENVIRONMENT_NAME       : "Nodejsapp-env"
-  DEPLOY_PACKAGE_NAME       : "node.js-app-${{ github.sha }}.zip"
+  APPLICATION_NAME       : "nodejsapp"
+  ENVIRONMENT_NAME       : "nodejsapp-env"
+  DEPLOY_PACKAGE_NAME       : "nodejsapp-${{ github.sha }}.zip"
   AWS_REGION_NAME           : "eu-north-1"
 
 # Controls when the workflow will run
