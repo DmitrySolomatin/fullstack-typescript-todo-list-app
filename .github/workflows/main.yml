@@ -28,8 +28,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  Docker_stage:
+  docker_stage:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -62,7 +61,7 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
-    my_ci_pipeline:
+  ci_to_AWS:
        runs-on: ubuntu-latest
        
        steps:
@@ -82,11 +81,11 @@ jobs:
            run : aws s3 cp ${{ env.DEPLOY_PACKAGE_NAME }} s3://${{ env.S3_BUCKET_NAME}}/
          
          - name: Print nice message on completion of CI Pipeline
-           run : echo "CI Pipeline finished successfully"
+           run : echo "CI to AWS finished successfully!"
            
-    my_cd_pipeline:
+  cd_to_AWS:
        runs-on: ubuntu-latest
-       needs: [my_ci_pipeline]
+       needs: [ci_to_AWS]
        
        steps:
          - name: Configure AWS Credentials in account
@@ -107,5 +106,5 @@ jobs:
          - name: Deploy our new Application Version
            run : aws elasticbeanstalk update-environment --environment-name ${{ env.ENVIRONMENT_NAME }} --version-label "Ver-${{ github.sha }}"
            
-         - name: Print nice message on completion of CD Pipeline
-           run : echo "CD Pipeline part finished successfully"  
+         - name: Print nice message on completion of CI-CD Pipeline
+           run : echo "CD to AWS part finished successfully!"  
