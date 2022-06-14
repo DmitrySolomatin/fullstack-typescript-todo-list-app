@@ -11,7 +11,6 @@ WORKDIR /fullstack-typescript-todo-list-app
 # where available (npm@5+)
 # COPY package*.json ./ \
 #     ./source ./
-
 # This will copy everything from the source path 
 # --more of a convenience when testing locally.
 COPY . .
