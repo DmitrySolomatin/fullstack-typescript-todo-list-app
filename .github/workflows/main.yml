@@ -8,7 +8,7 @@ name: CI-CD to DockerHub and AWS EBS
 env:
   S3_BUCKET_NAME : "node.js-app"
   APPLICATION_NAME       : "nodejsapp"
-  ENVIRONMENT_NAME       : "nodejsapp-env"
+  ENVIRONMENT_NAME       : "Nodejsapp-env"
   DEPLOY_PACKAGE_NAME       : "nodejsapp-${{ github.sha }}.zip"
   AWS_REGION_NAME           : "eu-north-1"
 
