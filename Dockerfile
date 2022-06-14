@@ -25,5 +25,5 @@ RUN npm install -g npm-check-updates \
     npm install babel-preset-env
 # Bundle app source
 COPY . /fullstack-typescript-todo-list-app
-EXPOSE 3000
+EXPOSE 4000
 CMD [ "babel-node", "app.js" ]
