@@ -23,8 +23,6 @@ RUN npm install -g npm-check-updates \
     npm install babel-cli \
     npm install babel-preset \
     npm install babel-preset-env
-# If you are building your code for production
-RUN npm ci
 # Bundle app source
 COPY . /fullstack-typescript-todo-list-app
 EXPOSE 3000
