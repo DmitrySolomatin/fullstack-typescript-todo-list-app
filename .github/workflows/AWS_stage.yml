@@ -1,3 +1,30 @@
+# GitHub Action Workflow to Deploy Node.js App to AWS ElasticBeanstalk
+#
+# Version      Date        Info
+# 1.0          2022        First Version
+# Made by Dmitry Solomatin
+#---------------------------------------------------------------------
+name: CI-CD to AWS
+env:
+  S3_BUCKET_NAME : "node.js-app"
+  APPLICATION_NAME       : "nodejsapp"
+  ENVIRONMENT_NAME       : "Nodejsapp-env"
+  DEPLOY_PACKAGE_NAME       : "nodejsapp-${{ github.sha }}.zip"
+  AWS_REGION_NAME           : "eu-north-1"
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
 ci_to_AWS:
        runs-on: ubuntu-latest
        
