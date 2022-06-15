@@ -1,4 +1,4 @@
-# GitHub Action Workflow to Deploy Node.js App to DockerHub and AWS ElasticBeanstalk
+# GitHub Action Workflow to Deploy Node.js App to DockerHub
 #
 # Version      Date        Info
 # 1.0          2022        First Version
