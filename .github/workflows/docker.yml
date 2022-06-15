@@ -4,7 +4,7 @@
 # 1.0          2022        First Version
 # Made by Dmitry Solomatin
 #---------------------------------------------------------------------
-name: CI-CD to DockerHub and AWS EBS
+name: CI-CD to DockerHub
 env:
   S3_BUCKET_NAME : "node.js-app"
   APPLICATION_NAME       : "nodejsapp"
